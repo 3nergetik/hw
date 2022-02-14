@@ -5,11 +5,39 @@
   "author": "3nergetik <carbo_r86@mail.ru>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.2",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.6.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.5.3",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "terser-webpack-plugin": "^5.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
     "webpack-merge": "^5.8.0"
   },
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix .",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "doc": "jsdoc -c jsdoc.conf.json",
+    "preshow:coverage": "npm run coverage",
+    "show:coverage": "live-server coverage/lcov-report",
+    "preshow:doc": "npm run doc",
+    "show:doc": "live-server doc",
+    "preshow:dist": "npm run build",
+    "show:dist": "live-server dist"
   }
 }
