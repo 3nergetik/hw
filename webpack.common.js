@@ -36,7 +36,14 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: 'url-loader',
+        use: [
+          {
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+          },
+          }
+        ]
       },
     ],
   },
