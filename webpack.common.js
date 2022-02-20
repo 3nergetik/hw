@@ -6,10 +6,7 @@ module.exports = {
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-  },
-  resolve: {
-    extensions:['.js', '.jsx']
+    publicPath: '',
   },
   module: {
     rules: [
@@ -36,14 +33,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-          loader: 'url-loader',
-          options: {
-            limit: 8192,
-          },
-          }
-        ]
+        type: 'asset/resource',
       },
     ],
   },
